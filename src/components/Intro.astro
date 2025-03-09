@@ -1,0 +1,53 @@
+---
+import './src/styles/global.css'
+
+const SERVICES = [
+    {
+        title: 'Branding',
+        description: 'Dolore Lorem sint dolor sit dolore commodo laborum dolor velit nulla.',
+        img: './',
+        classes: ' rounded-2xl col-span-1 row-span-1 bg-linear-to-bl from-pink-400 via-pink-600 to-pink-800 text-white'
+    },
+    {
+        title: 'Pagina Web / Ecommerce',
+        description: 'Dolore Lorem sint dolor sit dolore commodo laborum dolor velit nulla.',
+        img: './',
+        classes: 'rounded-2xl col-span-1 row-span-1 bg-gray-100'
+    },
+    {
+        title: 'Outsourcing de Marketing',
+        description: 'Dolore Lorem sint dolor sit dolore commodo laborum dolor velit nulla.',
+        img: './',
+        classes: 'rounded-2xl col-span-1 row-span-2 bg-linear-to-bl from-pink-800 via-pink-600 to-pink-800 text-white'
+    },
+    {
+        title: 'Pauta Publicitaria',
+        description: 'Dolore Lorem sint dolor sit dolore commodo laborum dolor velit nulla.',
+        img: './',
+        classes: 'rounded-2xl col-span-2 row-span-1 bg-gray-100'
+    },
+    
+]
+---
+
+
+<section class="flex flex-col justify-center bg-white px-40 py-20 gap-5">
+    <h2 class="font-[Inter] font-semibold text-4xl text-[#222222] text-center tracking-tighter">Esto es lo que <span class="bg-linear-to-bl from-pink-600 to-pink-500 bg-clip-text text-transparent">hacemos por ti</span></h2>
+    <p class="font-[Inter] text-[#222222] text-center text-balance">Dolore Lorem sint dolor sit dolore commodo laborum dolor velit nulla. <br> Est dolor nostrud exercitation velit reprehenderit tempor ut culpa sint.</p>
+    
+  
+    <div class="grid grid-cols-3 grid-rows-2 gap-5 w-full">
+
+        {
+            SERVICES.map(({title, description, img, classes:className}) => (
+            <article class:list={[className]}>
+            <button class:list = {["flex flex-col justify-left p-10 cursor-pointer w-full h-full", className]}>
+                <img src="{img}" alt={`Icono del servicio ${title}`}}>
+                <h3 class="font-[Inter] font-semibold text-2xl/7 text-left tracking-tighter">{title}</h3>
+                <p class="font-[Inter] text-sm text-left text-pretty">{description}</p>
+            </button>
+            </article>
+            ))
+        }
+    </div>
+</section>
